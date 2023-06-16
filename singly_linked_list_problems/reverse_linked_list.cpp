@@ -1,16 +1,39 @@
-// Question: Take a singly linked list as input and print the reverse of the linked list.
+// Problem Statement
 
-// Sample Input
-// Sample Output
-// 5 4 8 6 2 1 -1
-// 1 2 6 8 4 5
+// You need to take a singly linked list of integer value as input. Then you need to print the singly linked list in reverse order, after that print the original linked list also.
 
+// Note: You must use singly linked list, otherwise you will not get marks.
 
-// 1 2 3 4 -1
-// 4 3 2 1
+// Input Format
+
+// Input will contain the values of the singly linked list, and will terminate with -1.
+// Constraints
+
+// 1 <= N <= 10^6; Here N is the maximum number of nodes of the linked list.
+// 0 <= V <= 10^9; Here V is the value of each node.
+// Output Format
+
+// In first line, output the linked list in reverse order.
+// In second line, print the original linked list.
+// Sample Input 0
+
+// 10 20 30 40 50 -1
+// Sample Output 0
+
+// 50 40 30 20 10 
+// 10 20 30 40 50 
+// Sample Input 1
+
+// 20 40 50 10 -1
+// Sample Output 1
+
+// 10 50 40 20 
+// 20 40 50 10
 
 #include <bits/stdc++.h>
+
 using namespace std;
+
 class Node{
     public:
     int val;
@@ -36,8 +59,16 @@ void reverse_linked_list (Node* head){
     reverse_linked_list(tmp->next);
     cout<<tmp->val<<" ";
 }
+void print_linked_list (Node* head){
+    Node* tmp = head;
+    if(tmp == NULL) return;
+    cout<<tmp->val<<" ";
+    print_linked_list(tmp->next);
+}
+
 int main()
 {
+    // Write your code here
     Node* head = NULL;
     Node* tail = NULL;
     int v;
@@ -48,5 +79,7 @@ int main()
         insert_at_tail(head, tail, v);
     }
     reverse_linked_list(head);
+    cout<<endl;
+    print_linked_list(head);
     return 0;
 }
