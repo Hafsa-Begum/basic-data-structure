@@ -83,6 +83,7 @@ int size(Node* head){
 }
 void print_normal_list(Node* head){
     Node* tmp = head;
+    cout<<"L -> ";
     while(tmp!=NULL){
         cout<<tmp->val<<" ";
         tmp = tmp->next;
@@ -91,6 +92,7 @@ void print_normal_list(Node* head){
 }
 void print_reverse_list(Node* tail){
     Node* tmp = tail;
+    cout<<"R -> ";
     while (tmp != NULL)
     {
         cout<<tmp->val<<" ";
@@ -107,24 +109,20 @@ int main()
     {
         int pos, v; cin>>pos>>v;
         if(pos == size(head)){
-            insert_at_tail(head, tail, v);
-            print_normal_list(head);
-            print_reverse_list(tail);
+            insert_at_tail(head, tail, v);  
         }
         else if(pos>size(head)){
             cout<<"Invalid"<<endl;
+            continue;
         }
         else if(pos == 0){
             insert_at_head(head, tail, v);
-            print_normal_list(head);
-            print_reverse_list(tail);
         }
         else{
             insert_at_any_position(head, pos, v);
-            print_normal_list(head);
-            print_reverse_list(tail);
         }
-        
+        print_normal_list(head);
+        print_reverse_list(tail);
     }
     
 
