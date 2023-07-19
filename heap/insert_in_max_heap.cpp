@@ -25,3 +25,5 @@ int main()
     for(int val:v) cout<<val<<" ";
     return 0;
 }
+
+//up-heapify -> to insert element into max heap
