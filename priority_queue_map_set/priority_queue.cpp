@@ -11,12 +11,19 @@ int main()
         if(c==0){
             int x; cin>>x;
             pq.push(x);//O(logN)
+            cout<<pq.top()<<endl;//O(1)
         }
         else if(c==1){
-            pq.pop(); //O(logN)
+            cout<<pq.top()<<endl;//O(1)
         }
         else if(c==2){
-            cout<<pq.top()<<endl;//O(1)
+            if(!pq.empty()){
+                pq.pop();
+                
+            }else{
+                cout<<"Empty"<<endl;
+            }
+            cout<<pq.top()<<endl;
         }
         else{
             break;

@@ -3,13 +3,24 @@ using namespace std;
 
 int main()
 {
-    set<int> s;
-    s.insert(10);
-    s.insert(20);
-    s.insert(30);
-    for(auto it = s.begin(); it!=s.end(); it++){
-        cout<<*it<<endl;
+
+    int t; cin>>t;
+    while (t--)
+    {
+        int n; cin>>n;
+        set<int> s;
+        while(n--){
+            int x; cin>>x;
+            s.insert(x);
+        }
+        
+        for(auto it = s.begin(); it!=s.end(); it++){
+            cout<<*it<<" ";
+        }
+        cout<<endl;
     }
+    
+    
     return 0;
 }
 //set is used to remove duplicate value, sort elements, and search an element
